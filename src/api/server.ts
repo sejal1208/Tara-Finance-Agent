@@ -27,6 +27,23 @@ app.get('/health', (_req, res) => {
   res.json({ status: 'ok', service: 'tara-finance-agent' });
 });
 
+// Homepage — shows when someone visits the URL in browser
+app.get('/', (_req, res) => {
+  res.json({
+    service: 'Tara Finance Agent',
+    description: 'AI-powered personal finance research assistant',
+    status: 'running',
+    endpoints: {
+      ask: 'POST /ask — { "question": "your question here" }',
+      health: 'GET /health',
+    },
+    example: {
+      request: 'POST /ask',
+      body: { question: 'How much did I spend on food in total?' },
+    },
+  });
+});
+
 // Main endpoint
 app.post('/ask', async (req, res) => {
   const requestId = `req_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
