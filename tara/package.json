@@ -1,0 +1,28 @@
+{
+  "name": "tara-finance-agent",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "tsx watch src/api/server.ts",
+    "start": "tsx src/api/server.ts",
+    "ingest": "tsx scripts/ingest.ts",
+    "eval": "tsx evals/run.ts"
+  },
+  "dependencies": {
+    "@ai-sdk/google": "^1.2.0",
+    "@mastra/core": "^0.10.0",
+    "ai": "^4.3.0",
+    "express": "^5.0.0",
+    "pg": "^8.11.0",
+    "zod": "^3.23.0",
+    "dotenv": "^16.4.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.0.0",
+    "@types/pg": "^8.11.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.5.0"
+  },
+  "type": "module"
+}
